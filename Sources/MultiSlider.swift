@@ -26,6 +26,8 @@ open class MultiSlider: UIControl {
     @IBInspectable open dynamic var maximumValue: CGFloat = 1 { didSet { adjustValuesToStepAndLimits() } }
     @IBInspectable open dynamic var isContinuous: Bool = true
 
+    open var id: String?
+  
     // MARK: - Multiple Thumbs
 
     @objc public internal(set) var draggedThumbIndex: Int = -1
