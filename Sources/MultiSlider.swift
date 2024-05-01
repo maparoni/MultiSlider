@@ -148,6 +148,9 @@ open class MultiSlider: UIControl {
         }
     }
 
+#if os(visionOS)
+  @IBInspectable open dynamic var isHapticSnap: Bool = false
+#else
     /// generate haptic feedback when hitting snap steps
     @IBInspectable open dynamic var isHapticSnap: Bool {
         get {
@@ -158,6 +161,7 @@ open class MultiSlider: UIControl {
             selectionFeedbackGenerator?.prepare()
         }
     }
+#endif
 
     // MARK: - Value Labels
 
@@ -333,7 +337,9 @@ open class MultiSlider: UIControl {
     let margin: CGFloat = 32
     var isSettingValue = false
     lazy var defaultThumbImage: UIImage? = .circle()
+#if !os(visionOS)
     var selectionFeedbackGenerator: UISelectionFeedbackGenerator?
+#endif
 
     // MARK: - Overrides
 

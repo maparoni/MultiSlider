@@ -78,9 +78,13 @@ extension MultiSlider: UIGestureRecognizerDelegate {
         isSettingValue = true
         value[draggedThumbIndex] = newValue
         isSettingValue = false
+      
+#if !os(visionOS)
         if snap != .never || relativeValue == 0 || relativeValue == 1 {
             selectionFeedbackGenerator?.selectionChanged()
         }
+#endif
+      
         if isContinuous { sendActions(for: [.valueChanged, .primaryActionTriggered]) }
     }
 

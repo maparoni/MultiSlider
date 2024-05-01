@@ -27,7 +27,9 @@ extension MultiSlider {
             valueLabelFormatter.addObserverForAllProperties(observer: self)
         }
 
+#if !os(visionOS)
         selectionFeedbackGenerator = UISelectionFeedbackGenerator()
+#endif
     }
 
     private func setupPanGesture() {
