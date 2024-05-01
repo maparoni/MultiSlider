@@ -6,7 +6,6 @@
 
 #if canImport(SwiftUI)
 
-import SweeterSwift
 import SwiftUI
 
 /// Slider clone with multiple thumbs and values, range highlight, optional snap intervals, optional value labels.
@@ -42,27 +41,27 @@ import SwiftUI
     ) {
         _value = value
 
-        uiView.minimumValue =? minimumValue
-        uiView.maximumValue =? maximumValue
-        uiView.isContinuous =? isContinuous
-        uiView.snapStepSize =? snapStepSize
-        uiView.isHapticSnap =? isHapticSnap
-        uiView.valueLabelPosition =? valueLabelPosition
-        uiView.valueLabelAlternatePosition =? valueLabelAlternatePosition
-        uiView.isValueLabelRelative =? isValueLabelRelative
-        uiView.orientation =? orientation
-        uiView.outerTrackColor =? outerTrackColor
-        uiView.valueLabelColor =? valueLabelColor
-        uiView.valueLabelFont =? valueLabelFont
-        uiView.thumbImage =? thumbImage
-        uiView.showsThumbImageShadow =? showsThumbImageShadow
-        uiView.minimumImage =? minimumImage
-        uiView.maximumImage =? maximumImage
-        uiView.trackWidth =? trackWidth
-        uiView.hasRoundTrackEnds =? hasRoundTrackEnds
-        uiView.distanceBetweenThumbs =? distanceBetweenThumbs
-        uiView.keepsDistanceBetweenThumbs =? keepsDistanceBetweenThumbs
-        uiView.valueLabelFormatter =? valueLabelFormatter
+        uiView.minimumValue = minimumValue ?? uiView.minimumValue
+        uiView.maximumValue = maximumValue ?? uiView.maximumValue
+        uiView.isContinuous = isContinuous ?? uiView.isContinuous
+        uiView.snapStepSize = snapStepSize ?? uiView.snapStepSize
+        uiView.isHapticSnap = isHapticSnap ?? uiView.isHapticSnap
+        uiView.valueLabelPosition = valueLabelPosition ?? uiView.valueLabelPosition
+        uiView.valueLabelAlternatePosition = valueLabelAlternatePosition ?? uiView.valueLabelAlternatePosition
+        uiView.isValueLabelRelative = isValueLabelRelative ?? uiView.isValueLabelRelative
+        uiView.orientation = orientation ?? uiView.orientation
+        uiView.outerTrackColor = outerTrackColor ?? uiView.outerTrackColor
+        uiView.valueLabelColor = valueLabelColor ?? uiView.valueLabelColor
+        uiView.valueLabelFont = valueLabelFont ?? uiView.valueLabelFont
+        uiView.thumbImage = thumbImage ?? uiView.thumbImage
+        uiView.showsThumbImageShadow = showsThumbImageShadow ?? uiView.showsThumbImageShadow
+        uiView.minimumImage = minimumImage ?? uiView.minimumImage
+        uiView.maximumImage = maximumImage ?? uiView.maximumImage
+        uiView.trackWidth = trackWidth ?? uiView.trackWidth
+        uiView.hasRoundTrackEnds = hasRoundTrackEnds ?? uiView.hasRoundTrackEnds
+        uiView.distanceBetweenThumbs = distanceBetweenThumbs ?? uiView.distanceBetweenThumbs
+        uiView.keepsDistanceBetweenThumbs = keepsDistanceBetweenThumbs ?? uiView.keepsDistanceBetweenThumbs
+        uiView.valueLabelFormatter = valueLabelFormatter ?? uiView.valueLabelFormatter
     }
 
     public func makeUIView(context: UIViewRepresentableContext<MultiValueSlider>) -> MultiSlider {
